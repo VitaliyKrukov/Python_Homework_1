@@ -11,4 +11,4 @@ def product():
 
 @pytest.fixture
 def one_category():
-    return Category(name="малина", description="ягоды лесные сборные", products=["вишня", "малина", "земляника"])
+    return Category(name="малина", description="ягоды лесные сборные", products=[Product("смородина", "ягода", 20.21, 123)])
