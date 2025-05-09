@@ -1,7 +1,9 @@
 from src.product import Product
 
+
 class Category:
     """Создали класс категорий"""
+
     name: str
     description: str
     __products: list
@@ -17,17 +19,14 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
-
     @property
     def sum_quantity_products(self):
         """Вычисляет общее количество товаров (штук) в категории"""
         return sum(product.quantity for product in self.__products)
 
-
     def __str__(self):
         """Создали пользовательский вывод"""
         return f"{self.name}, количество продуктов: {self.sum_quantity_products} шт."
-
 
     def add_product(self, product):
         """Добавляем по одному уникальному продукту в список"""
