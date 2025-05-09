@@ -21,3 +21,10 @@ def test_price_setter(product, capsys):
     product.price = 10
     assert product.price == 10
 
+def test_add_product(product, two_product):
+    assert product + two_product == 4509.83
+    result = product + "не продукт"
+    assert result == TypeError
+
+def test_str_user(product):
+    assert str(product) == 'смородина, 20.21 руб. Остаток: 123 шт.'
