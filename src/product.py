@@ -1,6 +1,3 @@
-from typing import Any
-
-
 class Product:
     """Создали класс продуктов"""
 

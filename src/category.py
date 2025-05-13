@@ -36,7 +36,6 @@ class Category:
             self.__products.append(product)
             Category.product_count += 1
 
-
     @property
     def products(self):
         """Создали цикл, который добавляет строковые элементы"""
