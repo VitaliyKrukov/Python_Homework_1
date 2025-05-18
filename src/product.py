@@ -1,4 +1,7 @@
-class Product:
+from src.base_product import BaseProduct
+from src.product_mixin import ProductMixin
+
+class Product(BaseProduct, ProductMixin):
     """Создали класс продуктов"""
 
     name: str
@@ -12,6 +15,7 @@ class Product:
         self.description = description if description else ""
         self.__price = price if price else 0
         self.quantity = quantity if quantity else 0
+        super().__init__()
 
     def __str__(self) -> str:
         """Создали пользовательский вывод"""
@@ -25,7 +29,11 @@ class Product:
             raise TypeError
 
     @classmethod
-    def new_product(cls, product_data):
+    def product(cls, name, description, price, quantity):
+        return cls(name, description, price, quantity)
+
+    @classmethod
+    def new_product_dict(cls, product_data):
         """создали класс-метод для работы со словарями"""
         return cls(
             name=product_data.get("name", ""),

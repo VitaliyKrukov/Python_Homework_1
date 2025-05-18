@@ -10,8 +10,8 @@ def test_product(product):
     assert product.quantity == 123
 
 
-def test_new_product():
-    new_product = Product.new_product({"name": "Яблоко", "description": "фрукт", "price": 10.10, "quantity": 100})
+def test_new_product_dict():
+    new_product = Product.new_product_dict({"name": "Яблоко", "description": "фрукт", "price": 10.10, "quantity": 100})
     assert new_product.name == "Яблоко"
     assert new_product.description == "фрукт"
     assert new_product.price == 10.10
