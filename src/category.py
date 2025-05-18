@@ -30,8 +30,11 @@ class Category:
 
     def add_product(self, product):
         """Добавляем по одному уникальному продукту в список"""
-        if isinstance(product, Product) and product not in self.__products:
+        if not isinstance(product, Product) or product in self.__products:
+            raise TypeError
+        else:
             self.__products.append(product)
+            Category.product_count += 1
 
     @property
     def products(self):

@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -16,6 +18,8 @@ def test_category_property(one_category):
 def test_category_add_product(one_category):
     one_category.add_product(Product("ежевика", "ягода", 20.20, 12))
     assert len(one_category.product_list) == 3
+    with pytest.raises(TypeError):
+        one_category.add_product("")
 
 
 def test_category_str_user(one_category):

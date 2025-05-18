@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -25,8 +27,8 @@ def test_price_setter(product, capsys):
 
 def test_add_product(product, two_product):
     assert product + two_product == 4509.83
-    result = product + "не продукт"
-    assert result == TypeError
+    with pytest.raises(TypeError):
+        product + "не продукт"
 
 
 def test_str_user(product):

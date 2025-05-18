@@ -1,6 +1,3 @@
-from typing import Any
-
-
 class Product:
     """Создали класс продуктов"""
 
@@ -20,12 +17,12 @@ class Product:
         """Создали пользовательский вывод"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
-    def __add__(self, other) -> Any:
+    def __add__(self, other):
         """Создали метод вычисления"""
-        if isinstance(other, Product):
+        if isinstance(self, type(other)):
             return self.__price * self.quantity + other.__price * other.quantity
         else:
-            return TypeError
+            raise TypeError
 
     @classmethod
     def new_product(cls, product_data):
