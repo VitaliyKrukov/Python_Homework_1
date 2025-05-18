@@ -10,4 +10,3 @@ class BaseProduct(ABC):
     @abstractmethod
     def new_product(cls, *args, **kwargs):
         pass
-
