@@ -6,9 +6,8 @@ class BaseProduct(ABC):
     def __init__(self):
         super().__init__()
 
-
     @classmethod
     @abstractmethod
-    def product(cls, *args, **kwargs):
+    def new_product(cls, *args, **kwargs):
         pass
 
