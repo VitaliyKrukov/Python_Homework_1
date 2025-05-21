@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.product_mixin import ProductMixin
+
+
+class Product(BaseProduct, ProductMixin):
     """Создали класс продуктов"""
 
     name: str
@@ -12,6 +16,7 @@ class Product:
         self.description = description if description else ""
         self.__price = price if price else 0
         self.quantity = quantity if quantity else 0
+        super().__init__()
 
     def __str__(self) -> str:
         """Создали пользовательский вывод"""
