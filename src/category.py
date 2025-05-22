@@ -30,11 +30,11 @@ class Category:
 
     def add_product(self, product):
         """Добавляем по одному уникальному продукту в список"""
-        if not isinstance(product, Product) or product in self.__products:
-            raise TypeError
-        else:
+        if isinstance(product, Product):
             self.__products.append(product)
             Category.product_count += 1
+        else:
+            raise TypeError
 
     @property
     def products(self):
@@ -48,3 +48,9 @@ class Category:
     def product_list(self):
         """Создали вызеваемость приватного параметра"""
         return self.__products
+
+    def middle_price(self):
+        try:
+            return sum([product.price for product in self.__products]) / len(self.__products)
+        except ZeroDivisionError:
+            return 0
