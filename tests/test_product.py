@@ -38,5 +38,3 @@ def test_str_user(product):
 def test_product_exept(capsys):
     with pytest.raises(ValueError):
         Product("ежевика", "ягода", 20.20, -1)
-        capsys.readouterr()
-        assert capsys.readouterr().out == "Товар с нулевым количеством не может быть добавлен"
