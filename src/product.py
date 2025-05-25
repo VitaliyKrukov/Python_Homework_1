@@ -15,7 +15,10 @@ class Product(BaseProduct, ProductMixin):
         self.name = name if name else ""
         self.description = description if description else ""
         self.__price = price if price else 0
-        self.quantity = quantity if quantity else 0
+        if quantity > 0:
+            self.quantity = quantity
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         super().__init__()
 
     def __str__(self) -> str:
