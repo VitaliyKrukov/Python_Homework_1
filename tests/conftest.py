@@ -21,7 +21,7 @@ def one_category():
     return Category(
         name="ягоды",
         description="ягоды лесные сборные",
-        products=[Product("смородина", "ягода", 20.21, 123), Product("земляника", "ягода", 10.12, 200)],
+        products=[Product("смородина", "ягода", 20.21, 100), Product("земляника", "ягода", 10.12, 200)],
     )
 
 
@@ -35,3 +35,8 @@ def smartphone():
 @pytest.fixture
 def lawngrass():
     return LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")
+
+
+@pytest.fixture
+def category_without_product():
+    return Category(name="ягоды", description="ягоды лесные сборные", products=[])
